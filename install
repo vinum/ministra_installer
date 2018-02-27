@@ -64,7 +64,7 @@ service mysql restart
 cd /var/www/html
 sudo wget https://www.ucanbolat.nl/files/ministra_portal-5.4.0.zip
 sudo unzip ministra_portal-5.4.0.zip
-sudo mv ministra_portal-5.4.0 stalker_portal
+sudo mv ministra_portal-5.4.0 ministra_portal
 sudo rm -rf *.zip
 
 mysql -uroot -p$pass -e "create database ministra_db"
