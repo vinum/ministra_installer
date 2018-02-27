@@ -179,7 +179,7 @@ wget $source/default
 /etc/init.d/apache2 restart
 /etc/init.d/nginx restart
 
-cd /var/www/html/ministra_portal/deploy
+cd /var/www/html/stalker_portal/deploy
 sudo phing
 sleep 1
 smallLoader
