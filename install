@@ -27,7 +27,9 @@ source="https://www.ucanbolat.nl/configs"
 # ECHO STALKER_PORTAL ASCII :)
 clear
 echo ""
+echo ""
 echo "Ministra v5.4.0 Installer by UmitCanbolat.nl aka HOXSEC"
+echo ""
 echo ""
 #Update and Upgrade
 echo "Updating and Upgrading"
@@ -55,27 +57,34 @@ if [[ $EUID -ne 0 ]]; then
  exit 1
 else
  cmd=(dialog --separate-output --checklist "Please Select Software you want to install:" 22 76 16)
- options=(1 "Install Ministra Portal" on
+ options=(1 "Install Ministra Portal" off
  2 "Install Stalker Portal" off
- 3 "Exit" off)
+ 3 "Install Ministra on Ubuntu 16.04" off
+ 4 "Exit" off)
  choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
  clear
  for choice in $choices
  do
  case $choice in
  1)
- #Install Ministra*
+ clear
  echo "Installing Ministra"
  ./lab/ministra
 ;;
 2)
- #Install Stalker
+clear
  echo "Installing Stalker"
 ./lab/stalker
  ;;
 
- #Exit
 3)
+clear
+ echo "Install Ministra on Ubuntu 16.04"
+./lab/ministra16
+ ;;
+
+ #Exit
+4)
 exit
  ;;
 
