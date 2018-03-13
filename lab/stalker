@@ -39,7 +39,7 @@ smallLoader() {
 
 
 
-VER="5.1.1"
+VER="5.2.0"
 PRODUCT="Stalker Portal"
 WEB="http://`ip route get 8.8.8.8 | awk '{print $NF; exit}'`/stalker_portal"
 WAN="`wget -q -O - http://icanhazip.com/ | tail`"
