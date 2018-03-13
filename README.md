@@ -20,7 +20,7 @@ Feedback/comment/suggestions : https://www.ucanbolat.nl/
 Author Umit Canbolat a.k.a HOXSEC
 
 
-[![N|Solid](https://i.imgur.com/PGaDe8U.png)](https://www.ucanbolat.nl/) 
+<a href="https://www.ucanbolat.nl/"><img src="https://i.imgur.com/PGaDe8U.png" height="280px" width="500px" /></a>
 
 ```sh
 git clone https://github.com/hoxsec/ministra_installer
