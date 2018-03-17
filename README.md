@@ -1,4 +1,4 @@
-[![N|Solid](https://www.ucanbolat.nl/images/logo-black.png)](https://www.ucanbolat.nl/)
+[![N|Solid](https://i.imgur.com/qBj5ncf.png)](https://www.ucanbolat.nl/)
 
 [![Latest Stable Version](https://img.shields.io/badge/stable-1.0-blue.svg)](https://github.com/hoxsec/ministra_installer/releases)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red.svg)](https://opensource.org/licenses/GPL-3.0)
