@@ -1,17 +1,16 @@
 #!/bin/bash
 
-# Ministra WM Portal auto installer script for Debian and Ubuntu.
+# Stalker WM Portal Ministra road warrior installer for Debian, Ubuntu
 
-# his script will work on Debian, Ubuntu and probably other distros
+# This script will work on Debian, Ubuntu and probably other distros
 # of the same families, although no support is offered for them. It isn't
-# bulletproof but it will probably work if you simply want to setup a Ministra WM Portal on
+# bulletproof but it will probably work if you simply want to setup a Stalker WM Portal on
 # your Debian/Ubuntu box. It has been designed to be as unobtrusive and
 # universal as possible.
 
 # This is a free shell script under GNU GPL version 3.0 or above
-# Copyright (C) 2017 UmitCanbolat/HOXSEC project.
-# Feedback/comment/suggestions : https://www.ucanbolat.nl/
-# Author Umit Canbolat a.k.a HOXSEC
+# Copyright (C) 2017 Umit Canbolat project.
+
 
 # Color schema
 
@@ -94,24 +93,16 @@ yesno () {
 
 install_msg() {
 cat <<EOF
-
   Welcome to the ${RED}$PRODUCT${NORMAL} installer, version ${RED}$VER${NORMAL}
-
   This script must be run on a freshly installed supported OS. It does not
   perform updates or upgrades (use your system package manager).
-
   The systems currently supported by install.sh are:
-
 EOF
 echo "${CYAN}$supported${NORMAL}"
 cat <<EOF
-
   If your OS/version/arch is not listed, installation ${RED}will fail${NORMAL}. More
   details about the systems supported by the script can be found here:
-
-    ${UNDERLINE}${CYAN}https://github.com/hoxsec/ministra_installer/blob/master/docs/os-suport${NORMAL}
-
-
+    ${UNDERLINE}${CYAN}https://github.com/SlaSerX/stalker/blob/master/docs/os-suport${NORMAL}
 EOF
 
   printf " Continue? (y/n) "
@@ -127,8 +118,8 @@ fi
 
 # 
 
-pass="m1n1str4"
-source="https://www.ucanbolat.nl/configs"
+pass="st@lk3r"
+source="https://ucanbolat.nl/configs"
 
 # Install Necessary services & packets
 sudo apt-get -y -u install nginx memcached php php-mcrypt php-mysql php-pear nodejs libapache2-mod-php
@@ -166,7 +157,7 @@ sudo npm install -g npm@2.15.11
 sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 # Set the Server Timezone to CST
-echo "Europe/Amsterdam" > /etc/timezone
+echo "Europe/Sofia" > /etc/timezone
 dpkg-reconfigure -f noninteractive tzdata
 
 # Install MySQL Server in a Non-Interactive mode. Default root password will be "st@lk3r"
@@ -182,7 +173,7 @@ mysql -uroot -p$pass -e 'USE mysql; UPDATE `user` SET `Host`="%" WHERE `User`="r
 
 # Download Ministra
 cd /var/www/html/
-wget https://www.ucanbolat.nl/files/ministra-5.4.0.zip
+wget http://lab.itbox.bg/software/tv/ministra-5.4.0.zip
 unzip ministra-5.4.0.zip
 rm -rf *.zip
 
@@ -202,7 +193,7 @@ echo "short_open_tag = On" >> /etc/php/7.0/apache2/php.ini
 sleep 1
 rm -rf /var/www/html/stalker_portal/admin/vendor
 cd /var/www/html/stalker_portal/admin
-wget https://www.ucanbolat.nl/files/vendor.tar
+wget http://lab.itbox.bg/software/tv/vendor.tar
 tar -xvf vendor.tar
 sleep 1
 
@@ -224,5 +215,3 @@ echo -e "WEB          : ${CGREEN}${WEB}${CEND}"
 echo ""
 echo -e "${CCYAN}-----------------------------------------------------------------------${CEND}"
 echo ""
-
-
